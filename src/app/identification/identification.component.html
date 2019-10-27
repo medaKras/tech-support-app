@@ -3,7 +3,7 @@
     <input  class="form-control" type="text" placeholder="Mašinos nr." 
             #carNrInput (keyup)="onKey(carNrInput.value)">
 
-    <button class="btn btn-primary" 
+    <button class="btn btn-success" 
             (click)="buttonClicked()" 
             [disabled]="!carNr" 
             [routerLink]="['/setLocation', carNr]">Toliau</button>

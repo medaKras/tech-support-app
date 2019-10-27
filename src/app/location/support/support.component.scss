@@ -1,4 +1,46 @@
-#map {
-    height: 400px;
+.content {
+    width: 85%;
+    margin: 0 auto;
+    text-align:center;
 }
+.text {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 150px;
+    padding-bottom: 25px;
 
+    p {
+        margin-left: 50px;
+        color: #0D4C27;
+    }
+}
+button {
+    margin-top: 25px;
+}
+.textBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 150px;
+    padding-top: 25px;
+
+    p {
+        color: #0D4C27;
+    }
+    .btn {
+        margin-left: 25px;
+        margin-right: 25px;
+        width: 150px;
+    }
+    .links {
+        text-align: right;
+        a {
+            color: #B51820;
+        }   
+    }
+    div {
+        width: 30%;
+    }
+}
+ 
