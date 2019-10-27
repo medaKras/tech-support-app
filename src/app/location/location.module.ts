@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StorageServiceModule } from 'ngx-webstorage-service';
 
 import { LocationRoutingModule } from './location-routing.module';
 import { LocationComponent } from './location.component';
@@ -11,8 +10,7 @@ import { SessionStorageService } from '../core/session-storage.service';
   declarations: [ LocationComponent, SupportComponent ],
   imports: [
     CommonModule,
-    LocationRoutingModule,
-    StorageServiceModule
+    LocationRoutingModule
   ],
   providers: [SessionStorageService]
 })

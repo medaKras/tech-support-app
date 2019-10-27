@@ -4,7 +4,7 @@ export interface IUser {
         lat: number;
         lng: number;
     };
-    techSupportWorker?: IWorker; 
+    techSupportWorker?: IWorker;
 }
 
 export interface IWorker {

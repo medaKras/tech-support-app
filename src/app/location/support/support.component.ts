@@ -11,7 +11,7 @@ import { IUser, IWorker } from 'src/app/shared/interfaces';
 })
 export class SupportComponent implements OnInit {
 
-  carNr: string = '';
+  carNr = '';
   user: IUser;
   worker: IWorker;
 
@@ -27,7 +27,7 @@ export class SupportComponent implements OnInit {
   path: any[];
   text: string;
   steps: number;
-  error: boolean = false;
+  error = false;
 
   @ViewChild('mapWrapper', {static: false}) mapElement: ElementRef;
 
@@ -38,7 +38,6 @@ export class SupportComponent implements OnInit {
   ngOnInit() {
     this.carNr = this.route.snapshot.paramMap.get('carNr');
     this.user = this.sessionStorageService.getUser(this.carNr)[0];
-    
     if (!this.user) {
       this.router.navigateByUrl('/identification');
       return;
@@ -59,14 +58,14 @@ export class SupportComponent implements OnInit {
 
   initializeMap() {
     this.map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 14, 
+      zoom: 14,
       center: this.user.location
     });
     const icon = {
-      url: "../../../assets/user-point.png", 
+      url: '../../../assets/user-point.png',
       scaledSize: new google.maps.Size(25, 25)
     };
-    this.userMarker = new google.maps.Marker({position: this.user.location, map: this.map, icon: icon});
+    this.userMarker = new google.maps.Marker({position: this.user.location, map: this.map, icon});
   }
 
   setDirection() {
@@ -74,39 +73,39 @@ export class SupportComponent implements OnInit {
     this.directionsRenderer = new google.maps.DirectionsRenderer();
 
     const start = {
-      lat: this.user.location.lat, 
+      lat: this.user.location.lat,
       lng: this.user.location.lng
     };
     const end = {
-      lat: this.worker.location.lat, 
+      lat: this.worker.location.lat,
       lng: this.worker.location.lng
     };
 
     const request = {
       origin: start,
       destination: end,
-      travelMode: google.maps.TravelMode["DRIVING"]
+      travelMode: google.maps.TravelMode['DRIVING']
     };
 
     this.directionsService.route(request, (result, status) => {
-      if (status == 'OK') {
+      if (status === 'OK') {
         const icon = {
-          url: "../../../assets/worker-point.png",
+          url: '../../../assets/worker-point.png',
           scaledSize: new google.maps.Size(25, 25)
         };
-        
+
         this.path = result.routes[0].overview_path;
 
-        var bounds = new google.maps.LatLngBounds();
+        const bounds = new google.maps.LatLngBounds();
         for (var i = 0; i <  this.path.length; i++) {
           bounds.extend(this.path[i]);
         }
         this.map.fitBounds(bounds);
 
         this.workerMarker = new google.maps.Marker({
-          position: this.path[this.path.length-1], 
+          position: this.path[this.path.length - 1],
           map: this.map,
-          icon: icon
+          icon
         });
 
         this.travelTimeSec = +result.routes[0].legs[0].duration.value;
@@ -140,6 +139,6 @@ export class SupportComponent implements OnInit {
         clearInterval(interval);
         this.sessionStorageService.deleteUserTechSupportWorker(this.carNr);
       }
-    }, this.steps * 1000)
+    }, this.steps * 1000);
   }
 }

@@ -9,12 +9,11 @@ import { IWorker } from '../shared/interfaces';
   providedIn: 'root'
 })
 export class DataService {
-  
-  baseUrl: string = 'assets/';
+  baseUrl = 'assets/';
 
   constructor(private http: HttpClient) { }
 
-  getWorkers() : Observable<IWorker[]> {
+  getWorkers(): Observable<IWorker[]> {
     return this.http.get<IWorker[]>(this.baseUrl + 'workers.json')
       .pipe(
         catchError(this.handleError)
@@ -31,5 +30,4 @@ export class DataService {
     }
     return Observable.throw(error || 'Node.js server error');
   }
-
 }

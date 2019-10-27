@@ -9,14 +9,13 @@ import { SessionStorageService } from '../core/session-storage.service';
 })
 export class IdentificationComponent implements OnInit {
 
-  carNr: string = '';
-  
+  carNr = '';
   constructor(private sessionStorageService: SessionStorageService) { }
 
   ngOnInit() {
   }
 
-  onKey(carNr: string) { 
+  onKey(carNr: string) {
     this.carNr = carNr;
   }
 
