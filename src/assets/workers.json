@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Feliksas Dacys",
+        "phone": "+370-655-524-47",
+        "location": {
+            "lat": 54.9670, 
+            "lng": 24.0736
+        }
+    },
+    {
+        "id": 2,
+        "name": "Ada Ubarta",
+        "phone": "+370-655-540-58",
+        "location": {
+          "lat": 54.8908, 
+          "lng": 23.9196
+        }
+    },
+    {
+        "id": 3,
+        "name": "Salvadoras Gabaitis",
+        "phone": "+370-655-507-58",
+        "location": {
+          "lat": 54.8754, 
+          "lng": 23.8956
+        }
+    },
+    {
+        "id": 4,
+        "name": "Olegas Harfas",
+        "phone": "+370-655-582-19",
+        "location": {
+          "lat": 54.8865, 
+          "lng": 23.9314
+        }
+    },
+    {
+        "id": 5,
+        "name": "Neda Macalskienė",
+        "phone": "+370-655-527-90",
+        "location": {
+          "lat": 54.8765, 
+          "lng": 24.0229
+        }
+    },
+    {
+        "id": 6,
+        "name": "Ignas Dabicevičius",
+        "phone": "+370-655-541-29",
+        "location": {
+          "lat": 54.9159, 
+          "lng": 23.9906
+        }
+    }
+]

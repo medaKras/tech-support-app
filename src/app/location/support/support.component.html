@@ -1,0 +1,21 @@
+<div class="content">
+    <h2>{{text}}</h2>
+    <p>Jūsų mašinos nr.: {{ carNr }}</p>
+    <div #mapWrapper id="map"></div>
+    
+    <div *ngIf="!worker || error">
+        <p>Įvyko klaida generuojant maršrutą. Bandykite iš naujo</p>
+    </div>
+    <div *ngIf="worker && !error">
+        <p>Pas Jus važiuoja {{ worker.name }} {{ worker.phone }}</p>
+        <a class="btn btn-primary" href="tel:{{worker.phone}}">Skambinti</a>
+        
+        
+    </div>
+    
+    
+    <br>
+    <a class="btn btn-outline-info" [routerLink]="['/setLocation', carNr]">Pasirinkti kitą poziciją</a>
+    <br>
+    <a class="btn btn-outline-danger" routerLink="/identification">Registruoti naują automobilį</a>
+</div>

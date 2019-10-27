@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+    font-family: 'Barlow', sans-serif;
+}
+h1, h2, p {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+}
+h1 {
+    font-size: 26px;
+    font-weight: 400;
+}
+
+body {
+    height: 100%;
+}
+
+#map {
+    height: 800px;
+}
+
+
